@@ -6,11 +6,11 @@ using System.Reflection;
 
 namespace Ambev.DeveloperEvaluation.ORM;
 
-public class DefaultContext : DbContext
+public class SalesContext : DbContext
 {
-    public DbSet<User> Users { get; set; }
+    public DbSet<Sale> Sales { get; set; }
 
-    public DefaultContext(DbContextOptions<DefaultContext> options) : base(options)
+    public SalesContext(DbContextOptions<SalesContext> options) : base(options)
     {
     }
 
@@ -20,16 +20,16 @@ public class DefaultContext : DbContext
         base.OnModelCreating(modelBuilder);
     }
 }
-public class YourDbContextFactory : IDesignTimeDbContextFactory<DefaultContext>
+public class YourDbContextFactory : IDesignTimeDbContextFactory<SalesContext>
 {
-    public DefaultContext CreateDbContext(string[] args)
+    public SalesContext CreateDbContext(string[] args)
     {
         IConfigurationRoot configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json")
             .Build();
 
-        var builder = new DbContextOptionsBuilder<DefaultContext>();
+        var builder = new DbContextOptionsBuilder<SalesContext>();
         var connectionString = configuration.GetConnectionString("DefaultConnection");
 
         builder.UseNpgsql(
@@ -37,6 +37,6 @@ public class YourDbContextFactory : IDesignTimeDbContextFactory<DefaultContext>
                b => b.MigrationsAssembly("Ambev.DeveloperEvaluation.WebApi")
         );
 
-        return new DefaultContext(builder.Options);
+        return new SalesContext(builder.Options);
     }
 }
