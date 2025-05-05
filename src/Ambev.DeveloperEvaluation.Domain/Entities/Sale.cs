@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Ambev.DeveloperEvaluation.Domain.Entities
 {
+    /// <summary>
+    /// Represents a sale in the system with profile information.
+    /// This entity follows domain-driven design principles and includes business rules validation.
+    /// </summary>
     public class Sale : BaseEntity
     {
         public Guid Id { get; set; }
@@ -42,6 +46,24 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
             IsCancelled = isCancelled;
         }
 
+        /// <summary>
+        /// Performs validation of the Sale entity using the SaleValidator rules.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="ValidationResultDetail"/> containing:
+        /// - IsValid: Indicates whether all validation rules passed
+        /// - Errors: Collection of validation errors if any rules failed
+        /// </returns>
+        /// <remarks>
+        /// <listheader>The validation includes checking:</listheader>
+        /// <list type="bullet">SaleNumber format and length</list>
+        /// <list type="bullet">Date format</list>
+        /// <list type="bullet">CustomerId requirements</list>
+        /// <list type="bullet">CustomerName requirements</list>
+        /// <list type="bullet">BranchId requirements</list>
+        /// <list type="bullet">BranchName requirements</list>
+        /// <list type="bullet">If Items contains at last one item</list>
+        /// </returns>
         public ValidationResultDetail Validate()
         {
             var validator = new SaleValidator();

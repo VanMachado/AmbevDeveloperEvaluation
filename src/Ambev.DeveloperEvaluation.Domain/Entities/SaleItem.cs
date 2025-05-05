@@ -4,6 +4,10 @@ using Microsoft.AspNetCore.Components.Web;
 
 namespace Ambev.DeveloperEvaluation.Domain.Entities
 {
+    /// <summary>
+    /// Represents a SaleItem in the system with profile information.
+    /// This entity follows domain-driven design principles and includes business rules validation.
+    /// </summary>
     public class SaleItem
     {
         public Guid ProductId { get; set; }
@@ -31,6 +35,23 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
             IsCancelled = isCancelled;
         }
 
+        /// <summary>
+        /// Performs validation of the SaleItem entity using the SaleItemValidator rules.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="ValidationResultDetail"/> containing:
+        /// - IsValid: Indicates whether all validation rules passed
+        /// - Errors: Collection of validation errors if any rules failed
+        /// </returns>
+        /// <remarks>
+        /// <listheader>The validation includes checking:</listheader>
+        /// <list type="bullet">ProductId format and length</list>
+        /// <list type="bullet">ProductName requirements</list>
+        /// <list type="bullet">Quantity greater than 0 and less than 20</list>
+        /// <list type="bullet">UnitPrice greater than 0</list>
+        /// <list type="bullet">Discount validation rules</list>
+        /// <list type="bullet">TotalAmount greater than 0</list>        
+        /// </returns>
         public ValidationResultDetail Validate()
         {
             var validator = new SaleItemValidator();
