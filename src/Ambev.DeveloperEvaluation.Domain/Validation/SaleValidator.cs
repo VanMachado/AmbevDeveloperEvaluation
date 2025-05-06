@@ -13,7 +13,7 @@ namespace Ambev.DeveloperEvaluation.Domain.Validation
             .NotEmpty().WithMessage("Sale number is required.")
             .MaximumLength(50).WithMessage("Sale number must not exceed 50 characters.");
 
-            RuleFor(s => s.UpdateDate)
+            RuleFor(s => s.UpdatedDate)
                 .LessThanOrEqualTo(DateTime.UtcNow).WithMessage("Sale date cannot be in the future.");
 
             RuleFor(s => s.CustomerId)

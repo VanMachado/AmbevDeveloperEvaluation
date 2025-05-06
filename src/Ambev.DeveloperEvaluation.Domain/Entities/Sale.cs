@@ -1,8 +1,6 @@
-﻿using Ambev.DeveloperEvaluation.Common.Security;
-using Ambev.DeveloperEvaluation.Common.Validation;
+﻿using Ambev.DeveloperEvaluation.Common.Validation;
 using Ambev.DeveloperEvaluation.Domain.Common;
 using Ambev.DeveloperEvaluation.Domain.Validation;
-using Microsoft.AspNetCore.Identity;
 
 namespace Ambev.DeveloperEvaluation.Domain.Entities
 {
@@ -13,8 +11,8 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
     public class Sale : BaseEntity
     {        
         public string SaleNumber { get; set; }
-        public DateTime CreateDate { get; set; } = DateTime.Now;
-        public DateTime UpdateDate { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
         public Guid CustomerId { get; set; }
         public string CustomerName { get; set; }
         public decimal TotalAmount { get; set; }
@@ -25,7 +23,8 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
 
         public Sale()
         {
-            CreateDate = DateTime.Now;
+            CreatedDate = DateTime.Now;
+            UpdatedDate = DateTime.Now;
         }
 
         /// <summary>

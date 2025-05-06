@@ -43,9 +43,9 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale
             if (!validationResult.IsValid)
                 throw new ValidationException(validationResult.Errors);
 
-            var existingSale = await _saleRepository.GetByIdAsync(command.Id, cancellationToken);
-            if (existingSale is not null)
-                throw new InvalidOperationException($"Sale with Id {command.Id} already exists");
+            //var existingSale = await _saleRepository.GetByIdAsync(command.Id, cancellationToken);
+            //if (existingSale is not null)
+            //    throw new InvalidOperationException($"Sale with Id {command.Id} already exists");
 
             foreach(var item in command.Items)
             {

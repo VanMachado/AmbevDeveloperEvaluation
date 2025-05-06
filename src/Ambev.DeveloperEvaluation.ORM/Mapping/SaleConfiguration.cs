@@ -14,8 +14,8 @@ namespace Ambev.DeveloperEvaluation.ORM.Mapping
             builder.Property(s => s.Id).HasColumnType("uuid").HasDefaultValueSql("gen_random_uuid()");
 
             builder.Property(s => s.SaleNumber).IsRequired().HasMaxLength(50);
-            builder.Property(s => s.CreateDate).IsRequired();
-            builder.Property(s => s.UpdateDate);
+            builder.Property(s => s.CreatedDate).IsRequired().HasColumnType("timestamp without time zone");
+            builder.Property(s => s.UpdatedDate).HasColumnType("timestamp without time zone");
             builder.Property(s => s.CustomerId).IsRequired();
             builder.Property(s => s.CustomerName).IsRequired().HasMaxLength(50);
             builder.Property(s => s.TotalAmount).IsRequired();
@@ -24,9 +24,9 @@ namespace Ambev.DeveloperEvaluation.ORM.Mapping
             builder.Property(s => s.IsCancelled).IsRequired();
 
             builder.HasMany(s => s.Items)
-                   .WithOne(i => i.Sale)
-                   .HasForeignKey("SaleId")
-                   .OnDelete(DeleteBehavior.Cascade);
+                .WithOne()  
+                .HasForeignKey(i => i.SaleId)  
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

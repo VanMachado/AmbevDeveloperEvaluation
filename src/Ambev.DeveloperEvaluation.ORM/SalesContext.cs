@@ -26,8 +26,8 @@ public class YourDbContextFactory : IDesignTimeDbContextFactory<SalesContext>
     public SalesContext CreateDbContext(string[] args)
     {
         IConfigurationRoot configuration = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json")
+            .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../Ambev.DeveloperEvaluation.WebApi"))
+            .AddJsonFile("appsettings.json", optional: true)
             .Build();
 
         var builder = new DbContextOptionsBuilder<SalesContext>();
@@ -35,7 +35,7 @@ public class YourDbContextFactory : IDesignTimeDbContextFactory<SalesContext>
 
         builder.UseNpgsql(
                connectionString,
-               b => b.MigrationsAssembly("Ambev.DeveloperEvaluation.WebApi")
+               b => b.MigrationsAssembly("Ambev.DeveloperEvaluation.ORM")
         );
 
         return new SalesContext(builder.Options);

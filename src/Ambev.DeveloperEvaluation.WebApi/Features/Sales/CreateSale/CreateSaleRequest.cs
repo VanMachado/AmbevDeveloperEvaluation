@@ -1,15 +1,11 @@
 ﻿using Ambev.DeveloperEvaluation.Domain.Entities;
 
-namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale
+namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale
 {
     /// <summary>
-    /// Represents the response returned after successfully creating a new sale.
+    /// Represents a request to create a new sale in the system
     /// </summary>
-    /// <remarks>
-    /// This response contains the unique identifier of the newly created sale,
-    /// which can be used for subsequent operations or reference.
-    /// </remarks>
-    public class CreateSaleResult
+    public class CreateSaleRequest
     {
         /// <summary>
         /// Gets or sets SaleNumber on creation
@@ -20,16 +16,6 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale
         /// Gets or sets SaleNumber on creation
         /// </summary>
         public string SaleNumber { get; set; }
-
-        /// <summary>
-        /// Gets or sets CreatedDate on creation
-        /// </summary>
-        public DateTime CreatedDate { get; set; }
-
-        /// <summary>
-        /// Gets or sets UpdatedDate on creation
-        /// </summary>
-        public DateTime UpdatedTime { get; set; }
 
         /// <summary>
         /// Gets or sets CustomerName on creation

@@ -1,13 +1,10 @@
 ﻿using FluentValidation;
 
-namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale
+namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale
 {
-    /// <summary>
-    /// Validator for CreateSaleCommand that defines validation rules for user creation command.
-    /// </summary>
-    public class CreateSaleCommandValidator : AbstractValidator<CreateSaleCommand>
-    {
-        public CreateSaleCommandValidator()
+    public class CreateSaleRequestValidator : AbstractValidator<CreateSaleRequest>
+    {    
+        public CreateSaleRequestValidator()
         {
             RuleFor(sale => sale.SaleNumber).NotEmpty().MaximumLength(50);
             RuleFor(sale => sale.CustomerId).NotEqual(Guid.Empty);
@@ -32,7 +29,7 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale
                     .WithMessage("Quantity must be greater than zero and less than 20");
 
                 item.RuleFor(i => i.UnitPrice)
-                    .GreaterThan(0).WithMessage("UnitPrice must be greater than zero");                
+                    .GreaterThan(0).WithMessage("UnitPrice must be greater than zero");
             });
         }
     }
