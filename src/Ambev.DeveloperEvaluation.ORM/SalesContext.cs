@@ -9,6 +9,7 @@ namespace Ambev.DeveloperEvaluation.ORM;
 public class SalesContext : DbContext
 {
     public DbSet<Sale> Sales { get; set; }
+    public DbSet<SaleItem> SaleItems { get; set; }
 
     public SalesContext(DbContextOptions<SalesContext> options) : base(options)
     {
