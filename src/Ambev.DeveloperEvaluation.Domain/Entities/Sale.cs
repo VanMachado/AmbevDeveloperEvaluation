@@ -11,39 +11,21 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
     /// This entity follows domain-driven design principles and includes business rules validation.
     /// </summary>
     public class Sale : BaseEntity
-    {
-        public Guid Id { get; set; }
+    {        
         public string SaleNumber { get; set; }
-        public DateTime Date { get; set; } = DateTime.Now;
+        public DateTime CreateDate { get; set; } = DateTime.Now;
+        public DateTime UpdateDate { get; set; }
         public Guid CustomerId { get; set; }
         public string CustomerName { get; set; }
+        public decimal TotalAmount { get; set; }
         public Guid BranchId { get; set; }
         public string BranchName { get; set; }
         public List<SaleItem> Items { get; set; } = new List<SaleItem>();
-        public decimal TotalAmount { get; set; }
         public bool IsCancelled { get; set; }
 
-        public Sale(Guid id, 
-            string saleNumber, 
-            DateTime date, 
-            Guid customerId, 
-            string customerName, 
-            Guid branchId, 
-            string branchName, 
-            List<SaleItem> items, 
-            decimal totalAmount, 
-            bool isCancelled)
+        public Sale()
         {
-            Id = id;
-            SaleNumber = saleNumber;
-            Date = date;
-            CustomerId = customerId;
-            CustomerName = customerName;
-            BranchId = branchId;
-            BranchName = branchName;
-            Items = items;
-            TotalAmount = totalAmount;
-            IsCancelled = isCancelled;
+            CreateDate = DateTime.Now;
         }
 
         /// <summary>
@@ -74,6 +56,24 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
                 IsValid = result.IsValid,
                 Errors = result.Errors.Select(o => (ValidationErrorDetail)o)
             };
+        }      
+        
+        public decimal TotalAmountPurchase()
+        {            
+            return Items.Sum(item => item.TotalAmount);
+        }
+
+        public Dictionary<string, decimal> TotalAmountItem()
+        {
+            var totalAmount = new Dictionary<string, decimal>();
+
+            foreach (var item in Items)
+            {
+                if (!totalAmount.TryAdd(item.ProductName, item.TotalAmount))
+                    totalAmount[item.ProductName] += item.TotalAmount;
+            }
+
+            return totalAmount;
         }
     }
 }

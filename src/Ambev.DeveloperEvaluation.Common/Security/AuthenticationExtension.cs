@@ -10,9 +10,7 @@ namespace Ambev.DeveloperEvaluation.Common.Security
     public static class AuthenticationExtension
     {
         public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
-
+        {            
             var secretKey = configuration["Jwt:SecretKey"]?.ToString();
             ArgumentException.ThrowIfNullOrWhiteSpace(secretKey);
 
@@ -35,9 +33,7 @@ namespace Ambev.DeveloperEvaluation.Common.Security
                     ValidateAudience = false,
                     ClockSkew = TimeSpan.Zero
                 };
-            });
-
-            services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+            });            
 
             return services;
         }

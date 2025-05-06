@@ -1,4 +1,5 @@
 ﻿using Ambev.DeveloperEvaluation.Common.Validation;
+using Ambev.DeveloperEvaluation.Domain.Common;
 using Ambev.DeveloperEvaluation.Domain.Validation;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -8,32 +9,18 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
     /// Represents a SaleItem in the system with profile information.
     /// This entity follows domain-driven design principles and includes business rules validation.
     /// </summary>
-    public class SaleItem
+    public class SaleItem : BaseEntity
     {
+        public Guid SaleId { get; set; }
+        public Sale Sale { get; set; }
         public Guid ProductId { get; set; }
         public string ProductName { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal Discount { get; set; }
-        public int TotalAmount { get; set; }
-        public bool IsCancelled { get; set; }
+        public decimal TotalAmount { get; set; }        
 
-        public SaleItem(Guid productId, 
-            string productName, 
-            int quantity, 
-            decimal unitPrice, 
-            decimal discount, 
-            int total, 
-            bool isCancelled)
-        {
-            ProductId = productId;
-            ProductName = productName;
-            Quantity = quantity;
-            this.UnitPrice = unitPrice;
-            Discount = discount;
-            TotalAmount = total;
-            IsCancelled = isCancelled;
-        }
+        public SaleItem() { }
 
         /// <summary>
         /// Performs validation of the SaleItem entity using the SaleItemValidator rules.
