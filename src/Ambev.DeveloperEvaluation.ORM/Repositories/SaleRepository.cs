@@ -39,16 +39,29 @@ namespace Ambev.DeveloperEvaluation.ORM.Repositories
             }
         }
 
-        public Task<bool> DeleteSaleAsync(Guid id, CancellationToken cancellationToken = default)
+        public async Task<bool> DeleteSaleAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            var sale = await GetByIdAsync(id, cancellationToken);
+
+            if (sale is null)
+                return false;
+
+            _context.Sales.Remove(sale);
+            await _context.SaveChangesAsync(cancellationToken);
+            
+            return true;            
         }
 
         public async Task<IEnumerable<Sale>> GetAllSalesAsync(CancellationToken cancellationToken = default)
         {
-            return await _context.Sales
+            var sales = await _context.Sales
                 .Include(sale => sale.Items)
                 .ToListAsync(cancellationToken);
+
+            if (sales is null || sales.Count < 1)
+                throw new KeyNotFoundException("There's any sale here :/");
+
+            return sales;
         }
 
         public async Task<Sale> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
@@ -79,7 +92,7 @@ namespace Ambev.DeveloperEvaluation.ORM.Repositories
 
                 if (!existingSale)
                     throw new KeyNotFoundException($"Sale with ID {sale.Id} not found!");
-                
+
                 _context.Update(sale);
                 await _context.SaveChangesAsync(cancellationToken);
 

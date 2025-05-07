@@ -2572,3 +2572,467 @@ ORDER BY t."Id"
 2025-05-07 17:42:46.889 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.UpdateSale (Ambev.DeveloperEvaluation.WebApi)'
 2025-05-07 17:42:46.894 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 PUT https://localhost:7181/api/Sales - 400 null application/json; charset=utf-8 873.532ms
 2025-05-07 17:43:02.973 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2025-05-07 17:58:54.991 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2025-05-07 17:58:55.056 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using 'C:\Users\Machado\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-07 17:58:55.119 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2025-05-07 17:58:55.120 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2025-05-07 17:58:55.146 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-05-07 17:58:55.146 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-05-07 17:58:55.147 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: D:\_Repos\AmbevDeveloperEvaluation\src\Ambev.DeveloperEvaluation.WebApi
+2025-05-07 17:58:55.385 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2025-05-07 17:58:55.473 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 88.4961ms
+2025-05-07 17:58:55.483 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2025-05-07 17:58:55.483 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-07 17:58:55.483 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/_vs/browserLink - null null
+2025-05-07 17:58:55.486 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 2.3665ms
+2025-05-07 17:58:55.490 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/_framework/aspnetcore-browser-refresh.js - 200 13800 application/javascript; charset=utf-8 6.7494ms
+2025-05-07 17:58:55.501 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.6337ms
+2025-05-07 17:58:55.688 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2025-05-07 17:58:55.752 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 64.602ms
+2025-05-07 17:59:02.480 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 DELETE https://localhost:7181/api/Sales/693d077d-ef3f-45e9-95b5-ca9b89c8ac08 - null null
+2025-05-07 17:59:02.497 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 17:59:02.511 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "DeleteSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 17:59:02.585 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing BadRequestObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponse'.
+2025-05-07 17:59:02.590 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi) in 76.3826ms
+2025-05-07 17:59:02.591 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 17:59:02.592 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 DELETE https://localhost:7181/api/Sales/693d077d-ef3f-45e9-95b5-ca9b89c8ac08 - 400 null application/json; charset=utf-8 111.8278ms
+2025-05-07 17:59:12.301 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2025-05-07 18:03:38.978 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2025-05-07 18:03:39.044 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using 'C:\Users\Machado\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-07 18:03:39.107 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2025-05-07 18:03:39.108 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2025-05-07 18:03:39.133 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-05-07 18:03:39.134 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-05-07 18:03:39.134 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: D:\_Repos\AmbevDeveloperEvaluation\src\Ambev.DeveloperEvaluation.WebApi
+2025-05-07 18:03:39.617 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2025-05-07 18:03:39.698 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 81.4652ms
+2025-05-07 18:03:39.709 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2025-05-07 18:03:39.709 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-07 18:03:39.713 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 3.8864ms
+2025-05-07 18:03:39.717 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/_framework/aspnetcore-browser-refresh.js - 200 13800 application/javascript; charset=utf-8 7.6891ms
+2025-05-07 18:03:39.756 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/_vs/browserLink - null null
+2025-05-07 18:03:39.772 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.7503ms
+2025-05-07 18:03:39.904 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2025-05-07 18:03:39.962 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.6795ms
+2025-05-07 18:03:43.412 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 DELETE https://localhost:7181/api/Sales/693d077d-ef3f-45e9-95b5-ca9b89c8ac08 - null null
+2025-05-07 18:03:43.428 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:03:43.440 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "DeleteSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:03:44.147 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (28ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."BranchName", t."CreatedDate", t."CustomerId", t."CustomerName", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedDate", s0."Id", s0."Discount", s0."ProductId", s0."ProductName", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice"
+FROM (
+    SELECT s."Id", s."BranchId", s."BranchName", s."CreatedDate", s."CustomerId", s."CustomerName", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedDate"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleItems" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2025-05-07 18:03:44.275 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = Guid), @p11='?' (DbType = Guid), @p12='?' (DbType = Guid), @p13='?' (DbType = Guid), @p14='?' (DbType = Guid), @p15='?' (DbType = Guid), @p16='?' (DbType = Guid), @p17='?' (DbType = Guid), @p18='?' (DbType = Guid), @p19='?' (DbType = Guid), @p20='?' (DbType = Guid), @p21='?' (DbType = Guid), @p22='?' (DbType = Guid), @p23='?' (DbType = Guid), @p24='?' (DbType = Guid), @p25='?' (DbType = Guid), @p26='?' (DbType = Guid), @p27='?' (DbType = Guid), @p28='?' (DbType = Guid), @p29='?' (DbType = Guid), @p30='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "SaleItems"
+WHERE "Id" = @p0;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p1;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p2;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p3;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p4;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p5;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p6;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p7;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p8;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p9;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p10;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p11;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p12;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p13;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p14;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p15;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p16;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p17;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p18;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p19;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p20;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p21;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p22;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p23;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p24;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p25;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p26;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p27;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p28;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p29;
+DELETE FROM "Sales"
+WHERE "Id" = @p30;
+2025-05-07 18:03:44.295 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing ObjectResult, writing value of type 'System.String'.
+2025-05-07 18:03:44.298 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi) in 854.0646ms
+2025-05-07 18:03:44.299 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:03:44.303 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 DELETE https://localhost:7181/api/Sales/693d077d-ef3f-45e9-95b5-ca9b89c8ac08 - 204 null text/plain; charset=utf-8 891.177ms
+2025-05-07 18:04:29.685 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 DELETE https://localhost:7181/api/Sales/9b0fc333-4b3d-4506-904f-b603438bf09f - null null
+2025-05-07 18:04:29.688 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:04:29.689 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "DeleteSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:04:29.704 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."BranchName", t."CreatedDate", t."CustomerId", t."CustomerName", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedDate", s0."Id", s0."Discount", s0."ProductId", s0."ProductName", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice"
+FROM (
+    SELECT s."Id", s."BranchId", s."BranchName", s."CreatedDate", s."CustomerId", s."CustomerName", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedDate"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleItems" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2025-05-07 18:04:29.711 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = Guid), @p11='?' (DbType = Guid), @p12='?' (DbType = Guid), @p13='?' (DbType = Guid), @p14='?' (DbType = Guid), @p15='?' (DbType = Guid), @p16='?' (DbType = Guid), @p17='?' (DbType = Guid), @p18='?' (DbType = Guid), @p19='?' (DbType = Guid), @p20='?' (DbType = Guid), @p21='?' (DbType = Guid), @p22='?' (DbType = Guid), @p23='?' (DbType = Guid), @p24='?' (DbType = Guid), @p25='?' (DbType = Guid), @p26='?' (DbType = Guid), @p27='?' (DbType = Guid), @p28='?' (DbType = Guid), @p29='?' (DbType = Guid), @p30='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "SaleItems"
+WHERE "Id" = @p0;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p1;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p2;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p3;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p4;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p5;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p6;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p7;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p8;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p9;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p10;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p11;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p12;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p13;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p14;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p15;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p16;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p17;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p18;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p19;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p20;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p21;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p22;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p23;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p24;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p25;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p26;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p27;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p28;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p29;
+DELETE FROM "Sales"
+WHERE "Id" = @p30;
+2025-05-07 18:04:29.719 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing ObjectResult, writing value of type 'System.String'.
+2025-05-07 18:04:29.720 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi) in 28.7196ms
+2025-05-07 18:04:29.721 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:04:29.722 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 DELETE https://localhost:7181/api/Sales/9b0fc333-4b3d-4506-904f-b603438bf09f - 204 null text/plain; charset=utf-8 36.6671ms
+2025-05-07 18:04:37.773 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2025-05-07 18:05:35.138 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2025-05-07 18:05:35.203 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using 'C:\Users\Machado\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-07 18:05:35.270 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2025-05-07 18:05:35.271 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2025-05-07 18:05:35.297 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-05-07 18:05:35.298 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-05-07 18:05:35.298 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: D:\_Repos\AmbevDeveloperEvaluation\src\Ambev.DeveloperEvaluation.WebApi
+2025-05-07 18:05:35.514 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2025-05-07 18:05:35.603 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 89.6481ms
+2025-05-07 18:05:35.615 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-07 18:05:35.615 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2025-05-07 18:05:35.615 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/_vs/browserLink - null null
+2025-05-07 18:05:35.618 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 3.4545ms
+2025-05-07 18:05:35.620 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/_framework/aspnetcore-browser-refresh.js - 200 13800 application/javascript; charset=utf-8 5.3936ms
+2025-05-07 18:05:35.632 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.5209ms
+2025-05-07 18:05:35.769 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2025-05-07 18:05:35.833 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 64.1047ms
+2025-05-07 18:05:42.871 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 POST https://localhost:7181/api/Sales - application/json 644
+2025-05-07 18:05:42.890 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:05:42.902 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateSale(Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale.CreateSaleRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:05:43.592 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (27ms) [Parameters=[@__saleNumber_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."BranchId", s."BranchName", s."CreatedDate", s."CustomerId", s."CustomerName", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedDate"
+FROM "Sales" AS s
+WHERE s."SaleNumber" = @__saleNumber_0
+LIMIT 1
+2025-05-07 18:05:43.725 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?', @p5='?' (DbType = Boolean), @p6='?', @p7='?' (DbType = Decimal), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Sales" ("BranchId", "BranchName", "CreatedDate", "CustomerId", "CustomerName", "IsCancelled", "SaleNumber", "TotalAmount", "UpdatedDate")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+RETURNING "Id";
+2025-05-07 18:05:43.738 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (2ms) [Parameters=[@p9='?' (DbType = Decimal), @p10='?' (DbType = Guid), @p11='?', @p12='?' (DbType = Int32), @p13='?' (DbType = Guid), @p14='?' (DbType = Decimal), @p15='?' (DbType = Decimal), @p16='?' (DbType = Decimal), @p17='?' (DbType = Guid), @p18='?', @p19='?' (DbType = Int32), @p20='?' (DbType = Guid), @p21='?' (DbType = Decimal), @p22='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "SaleItems" ("Discount", "ProductId", "ProductName", "Quantity", "SaleId", "TotalAmount", "UnitPrice")
+VALUES (@p9, @p10, @p11, @p12, @p13, @p14, @p15)
+RETURNING "Id";
+INSERT INTO "SaleItems" ("Discount", "ProductId", "ProductName", "Quantity", "SaleId", "TotalAmount", "UnitPrice")
+VALUES (@p16, @p17, @p18, @p19, @p20, @p21, @p22)
+RETURNING "Id";
+2025-05-07 18:05:43.751 -03:00 [INF]  Sale 6beb4be8-c5b2-4a5a-8d6d-6bdb0c49c80f sucefully created!
+2025-05-07 18:05:43.756 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing CreatedResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale.CreateSaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-07 18:05:43.761 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi) in 855.4866ms
+2025-05-07 18:05:43.762 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:05:43.767 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 POST https://localhost:7181/api/Sales - 201 null application/json; charset=utf-8 895.8078ms
+2025-05-07 18:05:49.945 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/api/Sales - null null
+2025-05-07 18:05:49.948 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:05:49.951 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetAllSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllSale(System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:05:50.007 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."BranchId", s."BranchName", s."CreatedDate", s."CustomerId", s."CustomerName", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedDate", s0."Id", s0."Discount", s0."ProductId", s0."ProductName", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice"
+FROM "Sales" AS s
+LEFT JOIN "SaleItems" AS s0 ON s."Id" = s0."SaleId"
+ORDER BY s."Id"
+2025-05-07 18:05:50.021 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[System.Collections.Generic.IEnumerable`1[[Ambev.DeveloperEvaluation.Application.Sales.GetSale.GetSaleResult, Ambev.DeveloperEvaluation.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-07 18:05:50.028 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSale (Ambev.DeveloperEvaluation.WebApi) in 75.1247ms
+2025-05-07 18:05:50.029 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:05:50.030 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/api/Sales - 200 null application/json; charset=utf-8 84.956ms
+2025-05-07 18:05:58.971 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/api/Sales/6beb4be8-c5b2-4a5a-8d6d-6bdb0c49c80f - null null
+2025-05-07 18:05:58.974 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:05:58.977 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:05:59.024 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."BranchName", t."CreatedDate", t."CustomerId", t."CustomerName", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedDate", s0."Id", s0."Discount", s0."ProductId", s0."ProductName", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice"
+FROM (
+    SELECT s."Id", s."BranchId", s."BranchName", s."CreatedDate", s."CustomerId", s."CustomerName", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedDate"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleItems" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2025-05-07 18:05:59.031 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Features.Sales.GetSale.GetSaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-07 18:05:59.033 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) in 55.052ms
+2025-05-07 18:05:59.034 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:05:59.035 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/api/Sales/6beb4be8-c5b2-4a5a-8d6d-6bdb0c49c80f - 200 null application/json; charset=utf-8 64.3865ms
+2025-05-07 18:06:36.962 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 PUT https://localhost:7181/api/Sales - application/json 695
+2025-05-07 18:06:36.966 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.UpdateSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:06:36.970 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "UpdateSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateSale(Ambev.DeveloperEvaluation.WebApi.Features.Sales.UpdateSale.UpdateSaleRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:06:36.993 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[@__sale_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Sales" AS s
+    WHERE s."Id" = @__sale_Id_0)
+2025-05-07 18:06:37.002 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Decimal), @p1='?' (DbType = Guid), @p2='?', @p3='?' (DbType = Int32), @p4='?' (DbType = Guid), @p5='?' (DbType = Decimal), @p6='?' (DbType = Decimal), @p7='?' (DbType = Decimal), @p8='?' (DbType = Guid), @p9='?', @p10='?' (DbType = Int32), @p11='?' (DbType = Guid), @p12='?' (DbType = Decimal), @p13='?' (DbType = Decimal), @p23='?' (DbType = Guid), @p14='?' (DbType = Guid), @p15='?', @p16='?' (DbType = DateTime2), @p17='?' (DbType = Guid), @p18='?', @p19='?' (DbType = Boolean), @p20='?', @p21='?' (DbType = Decimal), @p22='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "SaleItems" ("Discount", "ProductId", "ProductName", "Quantity", "SaleId", "TotalAmount", "UnitPrice")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+RETURNING "Id";
+INSERT INTO "SaleItems" ("Discount", "ProductId", "ProductName", "Quantity", "SaleId", "TotalAmount", "UnitPrice")
+VALUES (@p7, @p8, @p9, @p10, @p11, @p12, @p13)
+RETURNING "Id";
+UPDATE "Sales" SET "BranchId" = @p14, "BranchName" = @p15, "CreatedDate" = @p16, "CustomerId" = @p17, "CustomerName" = @p18, "IsCancelled" = @p19, "SaleNumber" = @p20, "TotalAmount" = @p21, "UpdatedDate" = @p22
+WHERE "Id" = @p23;
+2025-05-07 18:06:37.127 -03:00 [INF]  Sale 6beb4be8-c5b2-4a5a-8d6d-6bdb0c49c80f sucefully updated!
+2025-05-07 18:06:37.130 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Features.Sales.UpdateSale.UpdateSaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-07 18:06:37.133 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.UpdateSale (Ambev.DeveloperEvaluation.WebApi) in 161.6143ms
+2025-05-07 18:06:37.134 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.UpdateSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:06:37.135 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 PUT https://localhost:7181/api/Sales - 200 null application/json; charset=utf-8 172.7247ms
+2025-05-07 18:07:01.957 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/api/Sales/6beb4be8-c5b2-4a5a-8d6d-6bdb0c49c80f - null null
+2025-05-07 18:07:01.959 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:07:01.960 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:07:01.968 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."BranchName", t."CreatedDate", t."CustomerId", t."CustomerName", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedDate", s0."Id", s0."Discount", s0."ProductId", s0."ProductName", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice"
+FROM (
+    SELECT s."Id", s."BranchId", s."BranchName", s."CreatedDate", s."CustomerId", s."CustomerName", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedDate"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleItems" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2025-05-07 18:07:01.970 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Features.Sales.GetSale.GetSaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-07 18:07:01.971 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) in 9.4066ms
+2025-05-07 18:07:01.972 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:07:01.973 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/api/Sales/6beb4be8-c5b2-4a5a-8d6d-6bdb0c49c80f - 200 null application/json; charset=utf-8 16.0976ms
+2025-05-07 18:07:21.994 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 PUT https://localhost:7181/api/Sales - application/json 695
+2025-05-07 18:07:21.995 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.UpdateSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:07:21.996 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "UpdateSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateSale(Ambev.DeveloperEvaluation.WebApi.Features.Sales.UpdateSale.UpdateSaleRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:07:22.000 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[@__sale_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Sales" AS s
+    WHERE s."Id" = @__sale_Id_0)
+2025-05-07 18:07:22.004 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Decimal), @p1='?' (DbType = Guid), @p2='?', @p3='?' (DbType = Int32), @p4='?' (DbType = Guid), @p5='?' (DbType = Decimal), @p6='?' (DbType = Decimal), @p7='?' (DbType = Decimal), @p8='?' (DbType = Guid), @p9='?', @p10='?' (DbType = Int32), @p11='?' (DbType = Guid), @p12='?' (DbType = Decimal), @p13='?' (DbType = Decimal), @p23='?' (DbType = Guid), @p14='?' (DbType = Guid), @p15='?', @p16='?' (DbType = DateTime2), @p17='?' (DbType = Guid), @p18='?', @p19='?' (DbType = Boolean), @p20='?', @p21='?' (DbType = Decimal), @p22='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "SaleItems" ("Discount", "ProductId", "ProductName", "Quantity", "SaleId", "TotalAmount", "UnitPrice")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+RETURNING "Id";
+INSERT INTO "SaleItems" ("Discount", "ProductId", "ProductName", "Quantity", "SaleId", "TotalAmount", "UnitPrice")
+VALUES (@p7, @p8, @p9, @p10, @p11, @p12, @p13)
+RETURNING "Id";
+UPDATE "Sales" SET "BranchId" = @p14, "BranchName" = @p15, "CreatedDate" = @p16, "CustomerId" = @p17, "CustomerName" = @p18, "IsCancelled" = @p19, "SaleNumber" = @p20, "TotalAmount" = @p21, "UpdatedDate" = @p22
+WHERE "Id" = @p23;
+2025-05-07 18:07:22.010 -03:00 [INF]  Sale 6beb4be8-c5b2-4a5a-8d6d-6bdb0c49c80f sucefully updated!
+2025-05-07 18:07:22.010 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Features.Sales.UpdateSale.UpdateSaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-07 18:07:22.011 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.UpdateSale (Ambev.DeveloperEvaluation.WebApi) in 13.6668ms
+2025-05-07 18:07:22.012 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.UpdateSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:07:22.013 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 PUT https://localhost:7181/api/Sales - 200 null application/json; charset=utf-8 19.3415ms
+2025-05-07 18:07:36.949 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/api/Sales/6beb4be8-c5b2-4a5a-8d6d-6bdb0c49c80f - null null
+2025-05-07 18:07:36.951 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:07:36.952 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:07:36.957 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."BranchName", t."CreatedDate", t."CustomerId", t."CustomerName", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedDate", s0."Id", s0."Discount", s0."ProductId", s0."ProductName", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice"
+FROM (
+    SELECT s."Id", s."BranchId", s."BranchName", s."CreatedDate", s."CustomerId", s."CustomerName", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedDate"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleItems" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2025-05-07 18:07:36.959 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Features.Sales.GetSale.GetSaleResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-07 18:07:36.960 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi) in 6.6938ms
+2025-05-07 18:07:36.961 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:07:36.962 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/api/Sales/6beb4be8-c5b2-4a5a-8d6d-6bdb0c49c80f - 200 null application/json; charset=utf-8 12.3716ms
+2025-05-07 18:07:47.914 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 DELETE https://localhost:7181/api/Sales/6beb4be8-c5b2-4a5a-8d6d-6bdb0c49c80f - null null
+2025-05-07 18:07:47.916 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:07:47.919 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "DeleteSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:07:47.926 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."BranchName", t."CreatedDate", t."CustomerId", t."CustomerName", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedDate", s0."Id", s0."Discount", s0."ProductId", s0."ProductName", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice"
+FROM (
+    SELECT s."Id", s."BranchId", s."BranchName", s."CreatedDate", s."CustomerId", s."CustomerName", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedDate"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleItems" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2025-05-07 18:07:47.934 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "SaleItems"
+WHERE "Id" = @p0;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p1;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p2;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p3;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p4;
+DELETE FROM "SaleItems"
+WHERE "Id" = @p5;
+DELETE FROM "Sales"
+WHERE "Id" = @p6;
+2025-05-07 18:07:47.940 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing ObjectResult, writing value of type 'Ambev.DeveloperEvaluation.Application.Sales.DeleteSale.DeleteSaleResponse'.
+2025-05-07 18:07:47.943 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi) in 22.6413ms
+2025-05-07 18:07:47.944 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:07:47.986 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 DELETE https://localhost:7181/api/Sales/6beb4be8-c5b2-4a5a-8d6d-6bdb0c49c80f - 204 null application/json; charset=utf-8 71.7567ms
+2025-05-07 18:08:04.545 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/api/Sales - null null
+2025-05-07 18:08:04.547 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:08:04.547 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetAllSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllSale(System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:08:04.551 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."BranchId", s."BranchName", s."CreatedDate", s."CustomerId", s."CustomerName", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedDate", s0."Id", s0."Discount", s0."ProductId", s0."ProductName", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice"
+FROM "Sales" AS s
+LEFT JOIN "SaleItems" AS s0 ON s."Id" = s0."SaleId"
+ORDER BY s."Id"
+2025-05-07 18:08:04.552 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[System.Collections.Generic.IEnumerable`1[[Ambev.DeveloperEvaluation.Application.Sales.GetSale.GetSaleResult, Ambev.DeveloperEvaluation.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-07 18:08:04.554 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSale (Ambev.DeveloperEvaluation.WebApi) in 5.0247ms
+2025-05-07 18:08:04.554 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:08:04.555 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/api/Sales - 200 null application/json; charset=utf-8 10.3608ms
+2025-05-07 18:08:24.077 -03:00 [INF] Microsoft.Hosting.Lifetime Application is shutting down...
+2025-05-07 18:09:47.139 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2025-05-07 18:09:47.204 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using 'C:\Users\Machado\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-07 18:09:47.411 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2025-05-07 18:09:47.411 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2025-05-07 18:09:47.438 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-05-07 18:09:47.439 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-05-07 18:09:47.439 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: D:\_Repos\AmbevDeveloperEvaluation\src\Ambev.DeveloperEvaluation.WebApi
+2025-05-07 18:09:47.862 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2025-05-07 18:09:47.945 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 83.478ms
+2025-05-07 18:09:47.958 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2025-05-07 18:09:47.961 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 2.4252ms
+2025-05-07 18:09:48.083 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-07 18:09:48.084 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/_vs/browserLink - null null
+2025-05-07 18:09:48.091 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/_framework/aspnetcore-browser-refresh.js - 200 13800 application/javascript; charset=utf-8 8.0517ms
+2025-05-07 18:09:48.102 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.1816ms
+2025-05-07 18:09:48.188 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2025-05-07 18:09:48.252 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 64.7977ms
+2025-05-07 18:10:07.931 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 DELETE https://localhost:7181/api/Sales/9b0fc333-4b3d-4506-904f-b603438bf09f - null null
+2025-05-07 18:10:07.947 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:10:07.959 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "DeleteSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteSale(System.Guid, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:10:08.622 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (26ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."BranchId", t."BranchName", t."CreatedDate", t."CustomerId", t."CustomerName", t."IsCancelled", t."SaleNumber", t."TotalAmount", t."UpdatedDate", s0."Id", s0."Discount", s0."ProductId", s0."ProductName", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice"
+FROM (
+    SELECT s."Id", s."BranchId", s."BranchName", s."CreatedDate", s."CustomerId", s."CustomerName", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedDate"
+    FROM "Sales" AS s
+    WHERE s."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "SaleItems" AS s0 ON t."Id" = s0."SaleId"
+ORDER BY t."Id"
+2025-05-07 18:10:08.636 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing NotFoundObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponse'.
+2025-05-07 18:10:08.641 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi) in 679.1444ms
+2025-05-07 18:10:08.643 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.DeleteSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:10:08.647 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 DELETE https://localhost:7181/api/Sales/9b0fc333-4b3d-4506-904f-b603438bf09f - 404 null application/json; charset=utf-8 715.3514ms
+2025-05-07 18:10:17.368 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/api/Sales - null null
+2025-05-07 18:10:17.370 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:10:17.374 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetAllSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllSale(System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:10:17.394 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."BranchId", s."BranchName", s."CreatedDate", s."CustomerId", s."CustomerName", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedDate", s0."Id", s0."Discount", s0."ProductId", s0."ProductName", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice"
+FROM "Sales" AS s
+LEFT JOIN "SaleItems" AS s0 ON s."Id" = s0."SaleId"
+ORDER BY s."Id"
+2025-05-07 18:10:17.401 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[System.Collections.Generic.IEnumerable`1[[Ambev.DeveloperEvaluation.Application.Sales.GetSale.GetSaleResult, Ambev.DeveloperEvaluation.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-07 18:10:17.408 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSale (Ambev.DeveloperEvaluation.WebApi) in 32.9212ms
+2025-05-07 18:10:17.409 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:10:17.410 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/api/Sales - 200 null application/json; charset=utf-8 42.2224ms
+2025-05-07 18:11:11.539 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.html - null null
+2025-05-07 18:11:11.544 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.html - 200 null text/html;charset=utf-8 4.7168ms
+2025-05-07 18:11:11.560 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-07 18:11:11.560 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/index.js - null null
+2025-05-07 18:11:11.562 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/_framework/aspnetcore-browser-refresh.js - 200 13800 application/javascript; charset=utf-8 1.6826ms
+2025-05-07 18:11:11.564 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/index.js - 200 null application/javascript;charset=utf-8 3.8362ms
+2025-05-07 18:11:11.709 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/_vs/browserLink - null null
+2025-05-07 18:11:11.716 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.1798ms
+2025-05-07 18:11:11.815 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - null null
+2025-05-07 18:11:11.823 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.6171ms
+2025-05-07 18:11:14.906 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 GET https://localhost:7181/api/Sales - null null
+2025-05-07 18:11:14.909 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:11:14.912 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetAllSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllSale(System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
+2025-05-07 18:11:14.948 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."BranchId", s."BranchName", s."CreatedDate", s."CustomerId", s."CustomerName", s."IsCancelled", s."SaleNumber", s."TotalAmount", s."UpdatedDate", s0."Id", s0."Discount", s0."ProductId", s0."ProductName", s0."Quantity", s0."SaleId", s0."TotalAmount", s0."UnitPrice"
+FROM "Sales" AS s
+LEFT JOIN "SaleItems" AS s0 ON s."Id" = s0."SaleId"
+ORDER BY s."Id"
+2025-05-07 18:11:14.950 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing NotFoundObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponse'.
+2025-05-07 18:11:14.951 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSale (Ambev.DeveloperEvaluation.WebApi) in 38.0932ms
+2025-05-07 18:11:14.952 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSale (Ambev.DeveloperEvaluation.WebApi)'
+2025-05-07 18:11:14.953 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 GET https://localhost:7181/api/Sales - 404 null application/json; charset=utf-8 47.4081ms

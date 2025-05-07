@@ -1,13 +1,17 @@
 ﻿using Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
+using Ambev.DeveloperEvaluation.Application.Sales.DeleteSale;
 using Ambev.DeveloperEvaluation.Application.Sales.GetSale;
 using Ambev.DeveloperEvaluation.Application.Sales.UpdateSale;
 using Ambev.DeveloperEvaluation.WebApi.Common;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale;
+using Ambev.DeveloperEvaluation.WebApi.Features.Sales.DeleteSale;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.GetSale;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.UpdateSale;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using OneOf.Types;
+using System.Net;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales
@@ -220,6 +224,52 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales
                     Message = ex.Message
                 });
             }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new ApiResponse
+                {
+                    Success = false,
+                    Message = ex.Message
+                });
+            }
+            catch (Exception)
+            {
+                return BadRequest(new ApiResponse
+                {
+                    Success = false,
+                    Message = "An unexpected error occurred."
+                });
+            }
+        }
+
+        /// <summary>
+        /// Delete a Sale
+        /// </summary>
+        /// <param name="request">The sale id</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <returns>A no content message</returns>
+        [HttpDelete("{id}")]        
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteSale([FromRoute] Guid id, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var request = new DeleteSaleRequest { Id = id };
+                var validator = new DeleteSaleRequestValidator();
+                var validationResult = await validator.ValidateAsync(request, cancellationToken);
+
+                if (!validationResult.IsValid)
+                    return BadRequest(validationResult.Errors);
+
+                var command = _mapper.Map<DeleteSaleCommand>(request.Id);
+                var response = await _mediator.Send(command, cancellationToken);
+
+                return new ObjectResult(response)
+                {
+                    StatusCode = (int)HttpStatusCode.NoContent                    
+                };
+            }                        
             catch (KeyNotFoundException ex)
             {
                 return NotFound(new ApiResponse

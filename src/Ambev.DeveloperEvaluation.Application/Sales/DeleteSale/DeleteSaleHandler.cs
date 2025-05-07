@@ -1,4 +1,5 @@
 ﻿using Ambev.DeveloperEvaluation.Domain.Repositories;
+using FluentValidation;
 using MediatR;
 
 namespace Ambev.DeveloperEvaluation.Application.Sales.DeleteSale
@@ -12,9 +13,19 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.DeleteSale
             _saleRepository = saleRepository;
         }
 
-        public Task<DeleteSaleResponse> Handle(DeleteSaleCommand request, CancellationToken cancellationToken)
+        public async Task<DeleteSaleResponse> Handle(DeleteSaleCommand command, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var validator = new DeleteSaleValidator();
+            var validationResult = await validator.ValidateAsync(command, cancellationToken);
+
+            if (!validationResult.IsValid)
+                throw new ValidationException(validationResult.Errors);
+
+            var success = await _saleRepository.DeleteSaleAsync(command.Id, cancellationToken);
+            if (!success)
+                throw new KeyNotFoundException($"User with ID {command.Id} not found");
+
+            return new DeleteSaleResponse { Success = true };
         }
     }
 }
