@@ -52,10 +52,10 @@ namespace Ambev.DeveloperEvaluation.ORM.Repositories
         }
 
         public async Task<Sale> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
-        {                        
+        {
             return await _context.Sales
                 .Include(sale => sale.Items)
-                .FirstOrDefaultAsync(sale => sale.Id== id, cancellationToken);
+                .FirstOrDefaultAsync(sale => sale.Id == id, cancellationToken);
         }
 
         /// <summary>
@@ -71,9 +71,25 @@ namespace Ambev.DeveloperEvaluation.ORM.Repositories
             return await _context.Sales.FirstOrDefaultAsync(sale => sale.SaleNumber == saleNumber, cancellationToken);
         }
 
-        public Task<Sale> UpdateSaleAsync(Sale sale, CancellationToken cancellationToken = default)
+        public async Task<Sale> UpdateSaleAsync(Sale sale, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var existingSale = await _context.Sales.AnyAsync(x => x.Id == sale.Id);
+
+                if (!existingSale)
+                    throw new KeyNotFoundException($"Sale with ID {sale.Id} not found!");
+                
+                _context.Update(sale);
+                await _context.SaveChangesAsync(cancellationToken);
+
+                return sale;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Database error while updating Sale number {sale.SaleNumber}");
+                throw new DomainException($"Database error while updating Sale number {sale.SaleNumber}");
+            }
         }
     }
 }

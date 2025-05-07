@@ -1,8 +1,11 @@
 ﻿using Ambev.DeveloperEvaluation.Domain.Entities;
 
-namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
+namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.UpdateSale
 {
-    public class UpdateSaleResult
+    /// <summary>
+    /// Represents a request to update a sale in the system
+    /// </summary>
+    public class UpdateSaleRequest
     {
         /// <summary>
         /// Gets or sets SaleNumber on creation
@@ -13,16 +16,6 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
         /// Gets or sets SaleNumber on creation
         /// </summary>
         public string SaleNumber { get; set; }
-
-        /// <summary>
-        /// Gets or sets CreatedDate on creation
-        /// </summary>
-        public DateTime CreatedDate { get; set; }
-
-        /// <summary>
-        /// Gets or sets UpdatedDate on creation
-        /// </summary>
-        public DateTime UpdatedDate { get; set; }
 
         /// <summary>
         /// Gets or sets CustomerName on creation
@@ -52,7 +45,7 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
         /// <summary>
         /// Gets or sets Items on creation
         /// </summary>
-        public List<SaleItem> Items { get; set; } = new List<SaleItem>();
+        public List<UpdateSaleitemRequest> Items { get; set; } = new List<UpdateSaleitemRequest>();
 
         /// <summary>
         /// Gets or sets IsCancelled on creation

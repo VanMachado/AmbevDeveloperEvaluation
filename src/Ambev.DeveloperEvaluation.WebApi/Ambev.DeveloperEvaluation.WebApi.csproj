@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <Folder Include="Features\Sales\DeleteSale\" />
-    <Folder Include="Features\Sales\UpdateSale\" />
     <Folder Include="logs\" />
     <Folder Include="Mappings\" />
   </ItemGroup>

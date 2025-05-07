@@ -1,8 +1,10 @@
 ﻿using Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 using Ambev.DeveloperEvaluation.Application.Sales.GetSale;
+using Ambev.DeveloperEvaluation.Application.Sales.UpdateSale;
 using Ambev.DeveloperEvaluation.WebApi.Common;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale;
 using Ambev.DeveloperEvaluation.WebApi.Features.Sales.GetSale;
+using Ambev.DeveloperEvaluation.WebApi.Features.Sales.UpdateSale;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -152,6 +154,65 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales
                 return Ok(response, "Sales retrieved successfully");
             }
             catch (DomainException ex)
+            {
+                return BadRequest(new ApiResponse
+                {
+                    Success = false,
+                    Message = ex.Message
+                });
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new ApiResponse
+                {
+                    Success = false,
+                    Message = ex.Message
+                });
+            }
+            catch (Exception)
+            {
+                return BadRequest(new ApiResponse
+                {
+                    Success = false,
+                    Message = "An unexpected error occurred."
+                });
+            }
+        }
+
+        /// <summary>
+        /// Update a Sale
+        /// </summary>
+        /// <param name="request">The sale request</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <returns>The Update ID sale details</returns>
+        [HttpPut]
+        [ProducesResponseType(typeof(ApiResponseWithData<GetSaleResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> UpdateSale([FromBody] UpdateSaleRequest request, CancellationToken cancellationToken)
+        {
+            try
+            {                
+                var validator = new UpdateSaleRequestValidator();
+                var validationResult = await validator.ValidateAsync(request, cancellationToken);
+
+                if (!validationResult.IsValid)
+                    return BadRequest(validationResult.Errors);
+
+                var command = _mapper.Map<UpdateSaleCommand>(request);
+                var response = await _mediator.Send(command, cancellationToken);
+
+                return Ok(_mapper.Map<UpdateSaleResponse>(response), "Sale updated successfully");
+            }
+            catch (DomainException ex)
+            {
+                return BadRequest(new ApiResponse
+                {
+                    Success = false,
+                    Message = ex.Message
+                });
+            }
+            catch (InvalidOperationException ex)
             {
                 return BadRequest(new ApiResponse
                 {
