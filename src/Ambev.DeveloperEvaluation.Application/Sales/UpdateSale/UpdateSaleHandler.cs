@@ -6,6 +6,7 @@ using AutoMapper;
 using FluentValidation;
 using MediatR;
 using Serilog;
+using System.Text.RegularExpressions;
 
 namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
 {
@@ -52,6 +53,10 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
             catch (InvalidOperationException ex)
             {
                 throw new InvalidOperationException(ex.Message);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                throw new KeyNotFoundException();
             }
             catch (Exception ex)
             {

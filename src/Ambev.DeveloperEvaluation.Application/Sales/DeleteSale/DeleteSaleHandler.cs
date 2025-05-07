@@ -23,7 +23,7 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.DeleteSale
 
             var success = await _saleRepository.DeleteSaleAsync(command.Id, cancellationToken);
             if (!success)
-                throw new KeyNotFoundException($"User with ID {command.Id} not found");
+                throw new KeyNotFoundException($"Sale with ID {command.Id} not found");
 
             return new DeleteSaleResponse { Success = true };
         }
