@@ -1,14 +1,11 @@
 ﻿using Ambev.DeveloperEvaluation.Domain.Entities;
 
-namespace Ambev.DeveloperEvaluation.Application.Sales.GetSale
+namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.GetSale
 {
     /// <summary>
-    /// Represents the response returned after successfully geting a sale.
+    /// API response model for GetSale operation
     /// </summary>
-    /// <remarks>
-    /// This response contains a sale    
-    /// </remarks>
-    public class GetSaleResult
+    public class GetSaleResponse
     {
         /// <summary>
         /// Gets or sets SaleNumber on creation

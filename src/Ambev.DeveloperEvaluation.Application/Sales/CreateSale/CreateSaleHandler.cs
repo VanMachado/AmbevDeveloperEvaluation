@@ -5,6 +5,7 @@ using AutoMapper;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale
 {
@@ -15,8 +16,7 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale
     {
         private readonly ISalesRepository _saleRepository;
         private readonly IMapper _mapper;
-        private readonly IDiscountService _discountService;
-        private readonly ILogger<CreateSaleHandler> _logger;
+        private readonly IDiscountService _discountService;        
 
         /// <summary>
         /// Initialize a new instance of CreateSaleHandler
@@ -26,13 +26,11 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale
         /// <param name="logger">The Logger instance</param>
         public CreateSaleHandler(ISalesRepository saleRepository, 
             IMapper mapper,
-            IDiscountService discountService,
-            ILogger<CreateSaleHandler> logger)
+            IDiscountService discountService)
         {
             _saleRepository = saleRepository;
             _mapper = mapper;
-            _discountService = discountService;
-            _logger = logger;
+            _discountService = discountService;            
         }
 
         public async Task<CreateSaleResult> Handle(CreateSaleCommand command, CancellationToken cancellationToken)
@@ -43,25 +41,35 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale
             if (!validationResult.IsValid)
                 throw new ValidationException(validationResult.Errors);
 
-            //var existingSale = await _saleRepository.GetByIdAsync(command.Id, cancellationToken);
-            //if (existingSale is not null)
-            //    throw new InvalidOperationException($"Sale with Id {command.Id} already exists");
+            var existingSale = await _saleRepository.GetBySaleNumberAsync(command.SaleNumber, cancellationToken);
+            if (existingSale is not null)
+                throw new InvalidOperationException($"Sale with SaleNumber {command.SaleNumber} and {command.Items.Count} items already exists");
 
-            foreach(var item in command.Items)
+            try
             {
-                _discountService.ValidateQuantityRules(item.Quantity);
-                var discountUnitPrice = _discountService.CalculateDiscount(item.Quantity, item.UnitPrice);
+                foreach (var item in command.Items)
+                {
+                    _discountService.ValidateQuantityRules(item.Quantity);
+                    var discountUnitPrice = _discountService.CalculateDiscount(item.Quantity, item.UnitPrice);
 
-                item.UnitPrice = discountUnitPrice;
-                item.TotalAmount = item.UnitPrice * item.Quantity;                
+                    item.UnitPrice = discountUnitPrice;
+                    item.TotalAmount = item.UnitPrice * item.Quantity;
+                }
+
+                command.TotalAmount = command.Items.Sum(i => i.TotalAmount);
+
+                var sale = _mapper.Map<Sale>(command);
+                var createdSale = await _saleRepository.CreateAsync(sale);
+
+                Log.Information($"Sale {sale.Id} sucefully created!");
+
+                return _mapper.Map<CreateSaleResult>(createdSale);
             }
-
-            command.TotalAmount = command.Items.Sum(i => i.TotalAmount);
-
-            var sale = _mapper.Map<Sale>(command);
-            var createdSale = await _saleRepository.CreateAsync(sale);
-
-            return _mapper.Map<CreateSaleResult>(createdSale);
+            catch (Exception ex)
+            {
+                Log.Error($"Sale error while creating Sale number {command.SaleNumber}");
+                throw new DomainException($"Sale error while creating Sale number {command.SaleNumber}");
+            }
         }
     }
 }
