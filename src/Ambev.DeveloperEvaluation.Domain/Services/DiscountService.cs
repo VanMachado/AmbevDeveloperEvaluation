@@ -1,4 +1,5 @@
 ﻿using Ambev.DeveloperEvaluation.Domain.Entities;
+using Microsoft.AspNetCore.Localization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,20 @@ namespace Ambev.DeveloperEvaluation.Domain.Services
 {
     public class DiscountService : IDiscountService
     {
-        public decimal CalculateDiscount(int quantity, decimal unitPrice)
+        public decimal CalculateDiscount(int quantity, decimal unitPrice, SaleItem saleItem)
         {
             if (quantity >= 10 && quantity <= 20)
+            {
+                saleItem.Discount = 0.2m;
                 return unitPrice * 0.8m;
+            }
 
             if (quantity >= 4)
+            {
+                saleItem.Discount = 0.1m;
                 return unitPrice * 0.9m;
-
+            }
+            
             return unitPrice;
         }
 

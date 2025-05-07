@@ -16,7 +16,7 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale
     {
         private readonly ISalesRepository _saleRepository;
         private readonly IMapper _mapper;
-        private readonly IDiscountService _discountService;        
+        private readonly IDiscountService _discountService;
 
         /// <summary>
         /// Initialize a new instance of CreateSaleHandler
@@ -24,13 +24,13 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale
         /// <param name="saleRepository">The Sale repository</param>
         /// <param name="mapper">The AutoMapper instance</param>
         /// <param name="logger">The Logger instance</param>
-        public CreateSaleHandler(ISalesRepository saleRepository, 
+        public CreateSaleHandler(ISalesRepository saleRepository,
             IMapper mapper,
             IDiscountService discountService)
         {
             _saleRepository = saleRepository;
             _mapper = mapper;
-            _discountService = discountService;            
+            _discountService = discountService;
         }
 
         public async Task<CreateSaleResult> Handle(CreateSaleCommand command, CancellationToken cancellationToken)
@@ -50,10 +50,9 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale
                 foreach (var item in command.Items)
                 {
                     _discountService.ValidateQuantityRules(item.Quantity);
-                    var discountUnitPrice = _discountService.CalculateDiscount(item.Quantity, item.UnitPrice);
+                    var discountUnitPrice = _discountService.CalculateDiscount(item.Quantity, item.UnitPrice, item);
 
-                    item.UnitPrice = discountUnitPrice;
-                    item.TotalAmount = item.UnitPrice * item.Quantity;
+                    item.TotalAmount = item.UnitPrice * (1 - item.Discount) * item.Quantity;
                 }
 
                 command.TotalAmount = command.Items.Sum(i => i.TotalAmount);
