@@ -17,6 +17,8 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
         /// </summary>
         public string SaleNumber { get; set; }
 
+        public DateTime CreatedDate { get; set; }
+
         /// <summary>
         /// Gets or sets CustomerName on creation
         /// </summary>

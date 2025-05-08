@@ -92,6 +92,8 @@ namespace Ambev.DeveloperEvaluation.ORM.Repositories
 
                 if (!existingSale)
                     throw new KeyNotFoundException($"Sale with ID {sale.Id} not found!");
+                
+                sale.CreatedDate = DateTime.Parse(sale.CreatedDate.ToString(), null, System.Globalization.DateTimeStyles.AdjustToUniversal);
 
                 _context.Update(sale);
                 await _context.SaveChangesAsync(cancellationToken);

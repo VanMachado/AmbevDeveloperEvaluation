@@ -11,6 +11,7 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.UpdateSale
         public UpdateSaleProfile()
         {
             CreateMap<UpdateSaleRequest, UpdateSaleCommand>()
+                 .ForMember(dest => dest.CreatedDate, opt => opt.MapFrom(src => src.CreatedDate))
                  .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
 
             CreateMap<UpdateSaleResult, UpdateSaleResponse>();

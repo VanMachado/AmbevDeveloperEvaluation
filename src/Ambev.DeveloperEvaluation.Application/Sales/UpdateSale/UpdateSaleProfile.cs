@@ -13,6 +13,7 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
         public UpdateSaleProfile()
         {
             CreateMap<UpdateSaleCommand, Sale>()
+                .ForMember(dest => dest.CreatedDate, opt => opt.MapFrom(src => src.CreatedDate))
                 .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
 
             CreateMap<Sale, UpdateSaleResult>();
