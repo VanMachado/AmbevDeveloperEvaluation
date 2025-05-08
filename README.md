@@ -1,86 +1,110 @@
-# Developer Evaluation Project
+# 🧪 Ambev Developer Evaluation - Backend
 
-`READ CAREFULLY`
+Projeto backend desenvolvido como parte do desafio técnico da Ambev. Esta aplicação é baseada em ASP.NET Core com Entity Framework Core, seguindo boas práticas de arquitetura limpa (DDD, separação por camadas, mapeamentos, etc), e utiliza Docker para facilitar a configuração do ambiente.
 
-## Instructions
-**The test below will have up to 7 calendar days to be delivered from the date of receipt of this manual.**
+---
 
-- The code must be versioned in a public Github repository and a link must be sent for evaluation once completed
-- Upload this template to your repository and start working from it
-- Read the instructions carefully and make sure all requirements are being addressed
-- The repository must provide instructions on how to configure, execute and test the project
-- Documentation and overall organization will also be taken into consideration
+## 📦 Tecnologias
 
-## Use Case
-**You are a developer on the DeveloperStore team. Now we need to implement the API prototypes.**
+- [.NET 8](https://dotnet.microsoft.com/en-us/)
+- [Entity Framework Core](https://learn.microsoft.com/ef/core)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Docker & Docker Compose](https://docs.docker.com/)
+- [AutoMapper](https://automapper.org/)
+- [FluentValidation](https://docs.fluentvalidation.net/)
+- [Dapper (opcional para otimizações futuras)](https://dapper-tutorial.net/)
+- Clean Architecture / DDD
 
-As we work with `DDD`, to reference entities from other domains, we use the `External Identities` pattern with denormalization of entity descriptions.
+---
 
-Therefore, you will write an API (complete CRUD) that handles sales records. The API needs to be able to inform:
+## 🛠️ Como rodar o projeto localmente
 
-* Sale number
-* Date when the sale was made
-* Customer
-* Total sale amount
-* Branch where the sale was made
-* Products
-* Quantities
-* Unit prices
-* Discounts
-* Total amount for each item
-* Cancelled/Not Cancelled
+### 🔁 Pré-requisitos
 
-It's not mandatory, but it would be a differential to build code for publishing events of:
-* SaleCreated
-* SaleModified
-* SaleCancelled
-* ItemCancelled
+- [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download)
+- [Docker](https://www.docker.com/products/docker-desktop/)
+- [DBeaver (opcional, para visualização do banco)](https://dbeaver.io/)
 
-If you write the code, **it's not required** to actually publish to any Message Broker. You can log a message in the application log or however you find most convenient.
+---
 
-### Business Rules
+### 🚀 Passo a passo
 
-* Purchases above 4 identical items have a 10% discount
-* Purchases between 10 and 20 identical items have a 20% discount
-* It's not possible to sell above 20 identical items
-* Purchases below 4 items cannot have a discount
+1. **Clone o repositório**
 
-These business rules define quantity-based discounting tiers and limitations:
+```bash
+git clone https://github.com/seu-usuario/seu-repo.git
+cd seu-repo
+```
 
-1. Discount Tiers:
-   - 4+ items: 10% discount
-   - 10-20 items: 20% discount
+2. **Suba o banco de dados com Docker Compose**
 
-2. Restrictions:
-   - Maximum limit: 20 items per product
-   - No discounts allowed for quantities below 4 items
+```bash
+docker-compose up -d
+```
 
-## Overview
-This section provides a high-level overview of the project and the various skills and competencies it aims to assess for developer candidates. 
 
-See [Overview](/.doc/overview.md)
 
-## Tech Stack
-This section lists the key technologies used in the project, including the backend, testing, frontend, and database components. 
+3. **Garanta que a porta padrão 5432 esteja disponível. Caso precise alterar, edite o `docker-compose.yml` para fixar a porta:**
 
-See [Tech Stack](/.doc/tech-stack.md)
+```bash
+ports: 
+    - "5432:5432"
+```
 
-## Frameworks
-This section outlines the frameworks and libraries that are leveraged in the project to enhance development productivity and maintainability. 
+4. **Configure o `appsettings.Development.json` com a string de conexão**
 
-See [Frameworks](/.doc/frameworks.md)
+```bash
+"ConnectionStrings": {
+  "DefaultConnection": "Host=localhost;Port=5432;Database=ambev_eval;Username=postgres;Password=postgres"
+}
+```
 
-<!-- 
-## API Structure
-This section includes links to the detailed documentation for the different API resources:
-- [API General](./docs/general-api.md)
-- [Products API](/.doc/products-api.md)
-- [Carts API](/.doc/carts-api.md)
-- [Users API](/.doc/users-api.md)
-- [Auth API](/.doc/auth-api.md)
--->
+5. **Execute as migrations
+   
+   Importante estar no projeto de ORM para que o EF identifique as migrations!
 
-## Project Structure
-This section describes the overall structure and organization of the project files and directories. 
+```bash
+dotnet ef database update --project src/Ambev.DeveloperEvaluation.ORM
+```
 
-See [Project Structure](/.doc/project-structure.md)
+📁 Estrutura do Projeto
+
+```bash
+src/
+├── Ambev.DeveloperEvaluation.WebApi         # Camada de API (Controllers, Endpoints)
+├── Ambev.DeveloperEvaluation.Application    # Casos de uso (Handlers, Services)
+├── Ambev.DeveloperEvaluation.Domain         # Entidades, Enums, Interfaces
+├── Ambev.DeveloperEvaluation.ORM            # DbContext, Migrations, Repositórios EF
+tests/
+├── Ambev.DeveloperEvaluation.Tests          # Testes automatizados (xUnit)
+docker-compose.yml                           # Banco de dados PostgreSQL
+
+```
+
+🧪 Endpoints de Exemplo
+-----------------------
+
+* `POST /api/users`
+
+* `GET /api/users/{id}`
+
+* `POST /api/sales`
+
+* `GET /api/sales/{id}`
+
+✅ Boas práticas utilizadas
+--------------------------
+
+* Separação de camadas (Domain, Application, Infrastructure, WebApi)
+
+* Mapeamento com AutoMapper
+
+* Padrões Repository e Unit of Work
+
+* FluentValidation para validação de entrada
+
+* Migrations controladas com EF Core
+
+* Configuração via Docker
+
+* `.gitignore` adaptado para Docker e .NET
