@@ -249,7 +249,7 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales
         /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>A no content message</returns>
         [HttpDelete("{id}")]        
-        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteSale([FromRoute] Guid id, CancellationToken cancellationToken)
         {
@@ -265,10 +265,7 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales
                 var command = _mapper.Map<DeleteSaleCommand>(request.Id);
                 var response = await _mediator.Send(command, cancellationToken);
 
-                return new ObjectResult(response)
-                {
-                    StatusCode = (int)HttpStatusCode.NoContent                    
-                };
+                return Ok(response, "Sale deleted successfully");                
             }                        
             catch (KeyNotFoundException ex)
             {

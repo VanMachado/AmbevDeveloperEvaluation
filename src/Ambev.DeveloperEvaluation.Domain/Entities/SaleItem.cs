@@ -2,6 +2,7 @@
 using Ambev.DeveloperEvaluation.Domain.Common;
 using Ambev.DeveloperEvaluation.Domain.Validation;
 using Microsoft.AspNetCore.Components.Web;
+using System.Text.Json.Serialization;
 
 namespace Ambev.DeveloperEvaluation.Domain.Entities
 {
@@ -10,7 +11,7 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
     /// This entity follows domain-driven design principles and includes business rules validation.
     /// </summary>
     public class SaleItem : BaseEntity
-    {
+    {        
         public Guid SaleId { get; set; }        
         public Guid ProductId { get; set; }
         public string ProductName { get; set; }

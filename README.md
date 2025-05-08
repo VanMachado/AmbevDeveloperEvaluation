@@ -39,7 +39,7 @@ cd seu-repo
 2. **Suba o banco de dados com Docker Compose**
 
 ```bash
-docker-compose up -d
+docker-compose --project-name ambev-developer-evaluation up -d
 ```
 
 
@@ -59,9 +59,8 @@ ports:
 }
 ```
 
-5. **Execute as migrations
-   
-   Importante estar no projeto de ORM para que o EF identifique as migrations!
+5. **Execute as migrations**
+   Mudar para o projeto de ORM para que o EF identifique as migrations, casso a tag --project nao funcione, e importante executá-la antes de testar a API!
 
 ```bash
 dotnet ef database update --project src/Ambev.DeveloperEvaluation.ORM

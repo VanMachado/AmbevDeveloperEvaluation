@@ -1,4 +1,5 @@
 ﻿using Ambev.DeveloperEvaluation.Domain.Entities;
+using System.Text.Json.Serialization;
 
 namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale
 {
@@ -9,7 +10,8 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale
     {
         /// <summary>
         /// Gets or sets SaleNumber on creation
-        /// </summary>
+        /// </summary>    
+        [JsonIgnore]
         public Guid Id { get; set; }
 
         /// <summary>

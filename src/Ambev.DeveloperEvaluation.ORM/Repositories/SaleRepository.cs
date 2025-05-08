@@ -48,15 +48,16 @@ namespace Ambev.DeveloperEvaluation.ORM.Repositories
 
             _context.Sales.Remove(sale);
             await _context.SaveChangesAsync(cancellationToken);
-            
-            return true;            
+
+            return true;
         }
 
         public async Task<IEnumerable<Sale>> GetAllSalesAsync(CancellationToken cancellationToken = default)
         {
             var sales = await _context.Sales
-                .Include(sale => sale.Items)
-                .ToListAsync(cancellationToken);
+            .Include(sale => sale.Items)
+            .ToListAsync(cancellationToken);
+
 
             if (sales is null || sales.Count < 1)
                 throw new KeyNotFoundException("There's any sale here :/");
@@ -92,8 +93,8 @@ namespace Ambev.DeveloperEvaluation.ORM.Repositories
 
                 if (!existingSale)
                     throw new KeyNotFoundException($"Sale with ID {sale.Id} not found!");
-                
-                sale.CreatedDate = DateTime.Parse(sale.CreatedDate.ToString(), null, System.Globalization.DateTimeStyles.AdjustToUniversal);
+
+                sale.CreatedDate = DateTime.Parse(sale.CreatedDate.ToString("yyyy-MM-ddTHH:mm:ss.ffffff"));
 
                 _context.Update(sale);
                 await _context.SaveChangesAsync(cancellationToken);
