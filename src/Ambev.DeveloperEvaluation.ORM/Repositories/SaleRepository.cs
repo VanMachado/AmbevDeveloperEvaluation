@@ -68,6 +68,7 @@ namespace Ambev.DeveloperEvaluation.ORM.Repositories
         public async Task<Sale> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
             return await _context.Sales
+                .AsNoTracking()
                 .Include(sale => sale.Items)
                 .FirstOrDefaultAsync(sale => sale.Id == id, cancellationToken);
         }
@@ -89,10 +90,35 @@ namespace Ambev.DeveloperEvaluation.ORM.Repositories
         {
             try
             {
-                var existingSale = await _context.Sales.AnyAsync(x => x.Id == sale.Id);
+                var existingSale = await GetByIdAsync(sale.Id, cancellationToken);
 
-                if (!existingSale)
+                if (existingSale is null)
                     throw new KeyNotFoundException($"Sale with ID {sale.Id} not found!");
+            
+                var tempSaleItemsList = sale.Items.ToList();
+
+                foreach (var item in tempSaleItemsList)
+                {
+                    if(item.Quantity < 1)                    
+                        _context.SaleItems.Remove(item);
+                    
+                    if(item.Quantity > 0 && item.Id != Guid.Empty)
+                    {
+                        existingSale.Items.FirstOrDefault(si => si.Id == item.Id).Quantity = item.Quantity;
+                        existingSale.Items.FirstOrDefault(si => si.Id == item.Id).UnitPrice = item.UnitPrice;
+                        existingSale.Items.FirstOrDefault(si => si.Id == item.Id).Discount = item.Discount;
+                        existingSale.Items.FirstOrDefault(si => si.Id == item.Id).TotalAmount = item.TotalAmount;
+
+                        _context.SaleItems.Update(item);
+                    }
+
+                    if(item.Quantity > 0 && item.Id == Guid.Empty)
+                    {    
+                        item.SaleId = sale.Id;                        
+
+                        await _context.SaleItems.AddAsync(item, cancellationToken);
+                    }
+                }
 
                 sale.CreatedDate = DateTime.Parse(sale.CreatedDate.ToString("yyyy-MM-ddTHH:mm:ss.ffffff"));
 
@@ -103,8 +129,8 @@ namespace Ambev.DeveloperEvaluation.ORM.Repositories
             }
             catch (Exception ex)
             {
-                Log.Error($"Database error while updating Sale number {sale.SaleNumber}");
-                throw new DomainException($"Database error while updating Sale number {sale.SaleNumber}");
+                Log.Error($"Database error while updating Sale number {sale.SaleNumber}. Error message {ex.Message}");
+                throw new DomainException($"Database error while updating Sale number {sale.SaleNumber}.");
             }
         }
     }

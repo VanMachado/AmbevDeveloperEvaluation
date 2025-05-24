@@ -13,17 +13,11 @@ namespace Ambev.DeveloperEvaluation.Domain.Services
         public decimal CalculateDiscount(int quantity, decimal unitPrice, SaleItem saleItem)
         {
             if (quantity >= 10 && quantity <= 20)
-            {
-                saleItem.Discount = 0.2m;
                 return unitPrice * 0.8m;
-            }
 
             if (quantity >= 4)
-            {
-                saleItem.Discount = 0.1m;
                 return unitPrice * 0.9m;
-            }
-            
+
             return unitPrice;
         }
 
@@ -36,9 +30,21 @@ namespace Ambev.DeveloperEvaluation.Domain.Services
                 throw new InvalidOperationException("Discounts are not allowed for quantities below 4 items.");
         }
 
+        public decimal ValueOfDiscount(SaleItem saleItem)
+        {
+            if (saleItem.Quantity >= 10 && saleItem.Quantity <= 20)            
+                return 0.2m;                          
+
+            if (saleItem.Quantity >= 4 && saleItem.Quantity < 10)
+                return 0.1m;
+
+            return 0.0m;
+        }
+
         private bool HasDiscount(int quantity)
         {
             return quantity >= 4;
         }
+
     }
 }

@@ -32,7 +32,7 @@ Projeto backend desenvolvido como parte do desafio técnico da Ambev. Esta aplic
 1. **Clone o repositório**
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
+git clone https://github.com/VanMachado/AmbevDeveloperEvaluation.git
 cd seu-repo
 ```
 
@@ -63,7 +63,7 @@ ports:
    Mudar para o projeto de ORM para que o EF identifique as migrations, casso a tag --project nao funcione, e importante executá-la antes de testar a API!
 
 ```bash
-dotnet ef database update --project src/Ambev.DeveloperEvaluation.ORM
+dotnet ef database update
 ```
 
 📁 Estrutura do Projeto

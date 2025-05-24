@@ -11,14 +11,14 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
     /// This entity follows domain-driven design principles and includes business rules validation.
     /// </summary>
     public class SaleItem : BaseEntity
-    {        
-        public Guid SaleId { get; set; }        
+    {
+        public Guid SaleId { get; set; }
         public Guid ProductId { get; set; }
         public string ProductName { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal Discount { get; set; }
-        public decimal TotalAmount { get; set; }        
+        public decimal TotalAmount { get; set; }
 
         public SaleItem() { }
 

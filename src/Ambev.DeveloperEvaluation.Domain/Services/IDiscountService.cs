@@ -6,5 +6,6 @@ namespace Ambev.DeveloperEvaluation.Domain.Services
     {
         decimal CalculateDiscount(int quantity, decimal unitPrice, SaleItem saleItem);
         void ValidateQuantityRules(int quantity);
+        decimal ValueOfDiscount(SaleItem saleItem);        
     }
 }

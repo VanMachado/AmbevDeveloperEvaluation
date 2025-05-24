@@ -36,9 +36,11 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
                 foreach (var item in command.Items)
                 {
                     _discountService.ValidateQuantityRules(item.Quantity);
-                    var discountUnitPrice = _discountService.CalculateDiscount(item.Quantity, item.UnitPrice, item);
+                    var saleItem = _mapper.Map<SaleItem>(item);
+                    var discountUnitPrice = _discountService.CalculateDiscount(item.Quantity, item.UnitPrice, saleItem);
+                    item.Discount = _discountService.ValueOfDiscount(saleItem);
 
-                    item.TotalAmount = item.UnitPrice * (1 - item.Discount) * item.Quantity;
+                    item.TotalAmount = discountUnitPrice * item.Quantity;
                 }
 
                 command.TotalAmount = command.Items.Sum(i => i.TotalAmount);
@@ -61,7 +63,7 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
             catch (Exception ex)
             {
                 Log.Error($"Sale error while updating Sale {command.Id}");
-                throw new DomainException($"Sale error while update Sale number {command.Id}");
+                throw new DomainException($"Sale error while update Sale number {command.Id}. Error message: {ex.Message}");
             }
         }
     }

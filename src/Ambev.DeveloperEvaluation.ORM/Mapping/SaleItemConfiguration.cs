@@ -16,7 +16,7 @@ namespace Ambev.DeveloperEvaluation.ORM.Mapping
             builder.Property(i => i.ProductName).IsRequired();
             builder.Property(i => i.Quantity).IsRequired();
             builder.Property(i => i.UnitPrice).IsRequired().HasColumnType("decimal(18,2)");
-            builder.Property(i => i.TotalAmount).IsRequired().HasColumnType("decimal(18,2)");            
+            builder.Property(i => i.TotalAmount).IsRequired().HasColumnType("decimal(18,2)");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
         /// <summary>
         /// Gets or sets SaleNumber on creation
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id { get; set; }      
 
         /// <summary>
         /// Gets or sets SaleNumber on creation
@@ -47,7 +47,7 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
         /// <summary>
         /// Gets or sets Items on creation
         /// </summary>
-        public List<SaleItem> Items { get; set; } = new List<SaleItem>();
+        public List<UpdateSaleItemCommand> Items { get; set; } = new List<UpdateSaleItemCommand>();
 
         /// <summary>
         /// Gets or sets IsCancelled on creation
